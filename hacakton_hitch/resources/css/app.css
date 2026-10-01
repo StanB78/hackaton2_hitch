@@ -1,9 +1,40 @@
-@import 'tailwindcss';
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-}
+:root { --blauw:#2563eb; --rood:#dc2626; --grijs:#6b7280; --rand:#e5e7eb; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background:#f3f4f6; color:#111827; line-height:1.5; }
+.topbalk { display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; background:#111827; color:#fff; }
+.topbalk a, .topbalk .link { color:#fff; text-decoration:none; margin-left:1rem; }
+.logo { font-weight:700; font-size:1.2rem; margin-left:0 !important; }
+main { max-width:900px; margin:1rem auto; padding:0 1rem; }
+.kaartje { background:#fff; border:1px solid var(--rand); border-radius:12px; padding:1.25rem; margin-bottom:1rem; }
+.kaartje.smal { max-width:480px; margin-left:auto; margin-right:auto; }
+label { display:block; margin:.75rem 0; font-weight:600; }
+label.inline { display:inline-block; font-weight:400; margin:0 .75rem 0 0; }
+input[type=text], input[type=email], input[type=password], textarea { width:100%; padding:.6rem; border:1px solid #d1d5db; border-radius:8px; font:inherit; }
+.knop { display:inline-block; background:var(--blauw); color:#fff; border:0; border-radius:8px; padding:.7rem 1.2rem; font:inherit; font-weight:600; cursor:pointer; }
+.knop.gevaar { background:var(--rood); }
+.knop.groot { width:100%; padding:1rem; font-size:1.15rem; margin-top:1rem; }
+.knop.klein-knop { padding:.35rem .8rem; }
+.knop:disabled { opacity:.5; cursor:default; }
+button.link { background:none; border:0; cursor:pointer; font:inherit; padding:0; margin-left:1rem; text-decoration:underline; }
+form.inline { display:inline; }
+#kaart { height:380px; border-radius:10px; margin:1rem 0; }
+.cijfers { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:.75rem; margin:1rem 0; }
+.cijfers div { background:#f9fafb; border:1px solid var(--rand); border-radius:10px; padding:.75rem; }
+.cijfers dt { color:var(--grijs); font-size:.85rem; }
+.cijfers dd { margin:0; font-size:1.4rem; font-weight:700; }
+.groot-getal { font-size:1.8rem !important; color:var(--blauw); }
+.badge { display:inline-block; background:#e0e7ff; color:#3730a3; border-radius:999px; padding:.1rem .7rem; font-size:.85rem; }
+.melding { padding:.75rem 1rem; border-radius:8px; margin-bottom:1rem; }
+.melding.ok { background:#dcfce7; color:#166534; }
+.melding.fout { background:#fee2e2; color:#991b1b; }
+.melding[hidden] { display:none; }
+.klein { color:var(--grijs); font-size:.85rem; }
+.rij { display:grid; grid-template-columns:2fr 1.2fr 1.2fr 1fr; gap:.5rem; padding:.7rem 0; border-bottom:1px solid var(--rand); color:inherit; text-decoration:none; }
+.demo { background:#fef9c3; border:1px dashed #ca8a04; border-radius:8px; padding:.6rem .8rem; margin:1rem 0; }
+.sterren { margin:.5rem 0; }
+body.taxi { background:#111827; }
+body.taxi .kaartje { background:#1f2937; color:#fff; border-color:#374151; }
+body.taxi .cijfers div { background:#111827; border-color:#374151; }
+body.taxi .cijfers dt { color:#9ca3af; }
+.groot-cijfers dd { font-size:2.6rem; }
+@media (max-width:600px){ .rij{ grid-template-columns:1fr 1fr; } #kaart{ height:300px; } }
